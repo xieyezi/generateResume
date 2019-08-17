@@ -3,9 +3,9 @@
     <div class="filter"></div>
     <div class="banner">
       <div class="intro">
-        <h2 class="slogan">满网络找简历模版心力交瘁？试试换个方式直接创建!</h2>
+        <h2 class="slogan">满网络找简历模版心力交瘁？试试换个方式!</h2>
         <p class="sub-slogan">多个优美简历模版 + Vue强力驱动,帮助你迅速制作出漂亮简历。</p>
-         <el-button type="primary" style="font-size:20px;width:200px;" class="start" @click="go">主要按钮</el-button>
+         <el-button type="primary" style="font-size:20px;width:200px;" class="start" @click="go">马上开始</el-button>
       </div>
     </div>
   </div>

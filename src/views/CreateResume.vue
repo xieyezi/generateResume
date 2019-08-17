@@ -2,10 +2,10 @@
 <div class="createResume">
   <div class="filter"></div>
   <div class="logo">
-    <img src="../assets/logo.png" />
+    <img src="../assets/logo.png" @click="back" />
   </div>
-  <h3 class="title">我的个人简历</h3>
-  <div class="previews">
+  <h3 class="title">先来看看我们有哪些漂亮的简历吧💁‍♂️</h3>
+   <div class="previews">
     <div class="preview">
       <router-link v-bind:to="'/cool'">
         <div class="preview-wrapper">
@@ -70,17 +70,34 @@
         </div>
       </router-link>
     </div>
-  </div>
+   </div>
+   <div class="start">
+     <el-button type="primary" class="start" @click="openDialog">开始动手吧<i class="el-icon-right el-icon--right"></i></el-button>
+   </div>
+   <GetInfoDialog :dialogOpen="dialogOpen" :closeDialog="closeDialog"></GetInfoDialog>
 </div>
 </template>
 <script>
 // @ is an alias to /src
-
+import GetInfoDialog from "./GetInfoDialog"
 export default {
   name: "createResume",
-  components: {},
+  data(){
+    return{
+      dialogOpen:false
+    }
+  },
+  components: {GetInfoDialog},
   methods:{
-    
+    back(){
+      this.$router.back();
+    },
+    openDialog(){
+      this.dialogOpen = true;
+    },
+    closeDialog(){
+      this.dialogOpen = false;
+    }
   }
 };
 </script>
@@ -88,7 +105,6 @@ export default {
 .createResume {
   width:100%;
   height:100%;
-  margin: auto;
 }
 /* .filter {
   position: absolute;
@@ -100,6 +116,7 @@ export default {
 } */
 .logo {
   text-align: center;
+  cursor:pointer;
   animation: right2left 0.5s ease-out both;
 }
 
@@ -125,7 +142,6 @@ export default {
 .previews {
   width: 60%;
   margin: 0 auto;
-  animation: toUp 1.0s 0.2s ease-out both;
 }
 
 .preview {
@@ -155,12 +171,16 @@ export default {
   max-width: 100%;
   font-size: 24px;
   font-weight: 300;
-  color: rgba(0, 0, 0, 0.85);
+  color: rgba(0, 0, 0, 0.9);
   width: 100%;
   text-align: center;
   display: block;
   top: 50%;
   transform: translateY(-50%);
+}
+.start{
+  margin-left:30px;
+  animation: left2right 0.5s ease-out both;
 }
 @keyframes right2left {
   0% {
@@ -180,16 +200,6 @@ export default {
   100% {
     opacity: 1;
     transform: translateX(0);
-  }
-}
-@keyframes toUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 </style>

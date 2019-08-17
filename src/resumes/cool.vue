@@ -60,12 +60,12 @@
 
                 <div class="section-content section-content--plain">
                   <div class="section-link">
-                    <Icon type="md-pin" />
+                    <i class=" el-icon-map-location"></i>
                     {{ person.contact.street }}
                   </div>
 
                   <a class="section-link" href="contactLinks.email">
-                   <Icon type="ios-mail-outline" />
+                   <i class="el-icon-phone"></i>
                     {{ person.contact.email }}
                   </a>
 
