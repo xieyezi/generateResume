@@ -79,25 +79,39 @@
 </template>
 <script>
 // @ is an alias to /src
-import GetInfoDialog from "./GetInfoDialog"
+import GetInfoDialog from "./GetInfoDialog";
+import { person } from "../../resume/data";
+import {mapActions} from 'vuex';
 export default {
   name: "createResume",
   data(){
     return{
-      dialogOpen:false
+      dialogOpen:false,
+      person:{}
     }
   },
   components: {GetInfoDialog},
+  computed:{
+   
+  },
   methods:{
     back(){
       this.$router.back();
     },
     openDialog(){
       this.dialogOpen = true;
+      this.savePerson(this.person);
     },
     closeDialog(val){
       this.dialogOpen = val;
-    }
+    },
+    ...mapActions([
+      'savePerson'
+    ])
+  },
+  created(){
+    this.person = person;
+    
   }
 };
 </script>

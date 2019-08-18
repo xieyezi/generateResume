@@ -1,0 +1,2 @@
+
+export const SET_PERSON_INFO = 'SET_PERSON_INFO';
