@@ -8,14 +8,6 @@ const person = {
         year: '1996',
         location: '中国重庆'
     },
-    contact:{
-        email: "1435398529@email.com",
-        phone: "17783887443",
-        street: "成都.武侯区",
-        city: "成都.四川.中国",
-        website: "xieyezi.xyz",
-        github: "xieyezi"
-    },
     experience: [
         {
             company: "连尚网络科技有限公司",
@@ -78,8 +70,6 @@ const person = {
     hobbies: [
         {
             name: "Video Games",
-            iconClass: "fa fa-gamepad",
-            url: "https://example.com"
         }
     ],
     contributions:[
@@ -88,6 +78,14 @@ const person = {
             description: "👔 💼 Build fast 🚀 and easy multiple beautiful resumes.",
             url: "https://github.com/salomonelli/best-resume-ever"
         }
-    ]
+    ],
+    contact:{
+        email: "1435398529@email.com",
+        phone: "17783887443",
+        street: "成都.武侯区",
+        city: "成都.四川.中国",
+        website: "xieyezi.xyz",
+        github: "xieyezi"
+    }
 }
 export { person }

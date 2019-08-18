@@ -72,9 +72,9 @@
     </div>
    </div>
    <div class="start">
-     <el-button type="primary" class="start" @click="openDialog">开始动手吧<i class="el-icon-right el-icon--right"></i></el-button>
+     <el-button type="primary" class="start" style="font-size:18px;width:160px;font-weight:300;" @click="openDialog">开始动手吧<i class="el-icon-right el-icon--right"></i></el-button>
    </div>
-   <GetInfoDialog :dialogOpen="dialogOpen" :closeDialog="closeDialog"></GetInfoDialog>
+   <GetInfoDialog :dialogOpen="dialogOpen" @closeDialog="closeDialog"></GetInfoDialog>
 </div>
 </template>
 <script>
@@ -95,8 +95,8 @@ export default {
     openDialog(){
       this.dialogOpen = true;
     },
-    closeDialog(){
-      this.dialogOpen = false;
+    closeDialog(val){
+      this.dialogOpen = val;
     }
   }
 };
@@ -106,14 +106,6 @@ export default {
   width:100%;
   height:100%;
 }
-/* .filter {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(7, 17, 27, 0.1);
-} */
 .logo {
   text-align: center;
   cursor:pointer;
@@ -145,13 +137,13 @@ export default {
 }
 
 .preview {
-  width: 180px;
+  width: 20%;
   float: left;
   margin-left: 1.5%;
   margin-right: 1.5%;
   margin-bottom: 1.5%;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.3);
-  height: 252px;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -180,7 +172,7 @@ export default {
 }
 .start{
   margin-left:30px;
-  animation: left2right 0.5s ease-out both;
+  animation: toUp 0.5s ease-out both;
 }
 @keyframes right2left {
   0% {
@@ -202,5 +194,17 @@ export default {
     transform: translateX(0);
   }
 }
+
+@keyframes toUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 </style>
 
