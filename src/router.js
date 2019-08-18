@@ -17,6 +17,11 @@ export default new Router({
       name: 'create',
       component: () => import('./views/CreateResume.vue')
     },
+    {
+      path: '/download',
+      name: 'download',
+      component: () => import('./views/DownloadResume.vue')
+    },
     // //简历路由
     {
       path: '/cool',

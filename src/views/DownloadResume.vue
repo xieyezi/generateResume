@@ -4,7 +4,7 @@
     <div class="logo">
       <img src="../assets/logo.png" @click="back" />
     </div>
-    <h3 class="title">先来看看我们有哪些漂亮的简历吧💁‍♂️</h3>
+    <h3 class="title">查看你的简历吧</h3>
     <div class="previews">
       <div class="preview">
         <router-link v-bind:to="'/cool'">
@@ -72,32 +72,22 @@
       </div>
     </div>
     <div class="start">
-      <el-button
-        type="primary"
-        class="start"
-        style="font-size:18px;width:160px;font-weight:300;"
-        @click="openDialog"
-      >
-        开始动手吧
-        <i class="el-icon-right el-icon--right"></i>
-      </el-button>
+      <el-button type="primary" class="start" style="font-size:18px;width:160px;font-weight:300;" @click="download">下载全部<i class="el-icon-right el-icon--right"></i></el-button>
     </div>
-    <GetInfoDialog :dialogOpen="dialogOpen" @closeDialog="closeDialog"></GetInfoDialog>
   </div>
 </template>
 <script>
 // @ is an alias to /src
-import GetInfoDialog from "./GetInfoDialog";
 import { mapGetters } from "vuex";
 export default {
-  name: "createResume",
+  name: "CatResume",
   data() {
     return {
-      dialogOpen: false
+      
     };
   },
   components: { 
-    GetInfoDialog 
+   
   },
   computed: {
     ...mapGetters([
@@ -108,11 +98,8 @@ export default {
     back() {
       this.$router.back();
     },
-    openDialog() {
-      this.dialogOpen = true;
-    },
-    closeDialog(val) {
-      this.dialogOpen = val;
+    download(){
+        
     }
   },
   created() {}
@@ -189,7 +176,9 @@ export default {
   transform: translateY(-50%);
 }
 .start {
-  margin-left: 30px;
+  position: fixed;
+  right: 10%;
+  bottom: 15%;
   animation: toUp 0.5s ease-out both;
 }
 @keyframes right2left {
