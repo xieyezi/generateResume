@@ -88,7 +88,7 @@
 <script>
 // @ is an alias to /src
 import GetInfoDialog from "./GetInfoDialog";
-import { mapGetters } from "vuex";
+
 export default {
   name: "createResume",
   data() {
@@ -100,9 +100,6 @@ export default {
     GetInfoDialog 
   },
   computed: {
-    ...mapGetters([
-      "person"
-    ])
   },
   methods: {
     back() {

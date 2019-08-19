@@ -1,7 +1,7 @@
 <template>
   <div class="page-wrapper">
     <div id="cool" class="page">
-      <div class="page-inner">
+      <div class="page-inner" v-if="this.person.contact">
         <div class="resume" id="resume1">
           <div class="row text-center">
             <span class="name">{{person.name}}</span>
@@ -102,23 +102,42 @@
         </div>
       </div>
     </div>
+     <div class="start">
+      <el-button type="primary" class="start" style="font-size:16px;width:140px;font-weight:300;" @click="download">下载<i class="el-icon-download el-icon--right"></i></el-button>
+    </div>
   </div>
 </template>
 
 <script>
-import { person } from "../../resume/data";
+import { Person } from "../../resume/data";
+import { mapGetters } from "vuex";
 export default {
   name: "left-right-rtl",
   data() {
     return {
-      person: {}
+     person:{}
     };
   },
+  computed: {
+    ...mapGetters([
+      "personinfo"
+    ])
+  },
+  mounted(){
+    console.log(this.personinfo);
+    if(this.personinfo){
+      this.person = this.personinfo;
+    }else{
+       this.person = Person;
+    }
+  },
   components: {},
-  methods: {},
+  methods: {
+    download(){
+      
+    }
+  },
   created() {
-    this.person = person;
-    console.log(this.person);
   }
 }
 </script>

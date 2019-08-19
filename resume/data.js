@@ -1,6 +1,6 @@
 //定义个人简历的信息
 
-const person = {
+const Person = {
     name: 'xieyezi', //姓名
     about: 'hi,我是写夜子，这是我设计的网站。', //个人简介
     position: 'web 开发工程师', //职位
@@ -88,4 +88,4 @@ const person = {
         github: "xieyezi"
     }
 }
-export { person }
+export { Person }

@@ -47,4 +47,10 @@ body {
   page-break-after: auto;
   overflow: hidden;
 }
+.start {
+  position: fixed;
+  right: 10%;
+  bottom: 15%;
+  animation: toUp 0.5s ease-out both;
+}
 </style>

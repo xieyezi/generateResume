@@ -1,7 +1,7 @@
 <template>
   <div class="page-wrapper">
     <div id="cool" class="page">
-      <div class="page-inner">
+      <div class="page-inner" v-if="this.person.birth">
         <div class="resume">
           <div class="leftCol m_box">
             <div class="shadow"></div>
@@ -105,29 +105,59 @@
               <div class="headline">{{education.degree}}</div>
               <p class="info">{{education.timeperiod}}, {{education.description}}</p>
             </div>
+
+            <div class="section-headline">项目经历</div>
+            <div class="block" v-for="project in person.projects" :key="project.name">
+              <div class="block-helper"></div>
+              <div class="headline">{{project.name}}</div>
+              <p style="display:inline-block;padding-right:10px;">开发语言</p><p style="display:inline-block;" class="info">{{project.platform}}</p>
+              <p>{{project.description}}</p>
+              <a href="project.url" class="headline" style="text-decoration:none;">
+                <p>{{project.url}}</p>
+              </a>
+            </div>
           </div>
 
           <div style="clear:both;"></div>
         </div>
       </div>
     </div>
+     <div class="start">
+      <el-button type="primary" class="start" style="font-size:16px;width:140px;font-weight:300;" @click="download">下载<i class="el-icon-download el-icon--right"></i></el-button>
+    </div>
   </div>
 </template>
 
 <script>
-import { person } from "../../resume/data";
+import { Person } from "../../resume/data";
+import { mapGetters } from "vuex";
 export default {
   name: "material-dark",
   data() {
     return {
-      person: {}
+     person:{}
     };
   },
+  computed: {
+    ...mapGetters([
+      "personinfo"
+    ])
+  },
+  mounted(){
+    console.log(this.personinfo);
+    if(this.personinfo){
+      this.person = this.personinfo;
+    }else{
+       this.person = Person;
+    }
+  },
   components: {},
-  methods: {},
+  methods: {
+    download(){
+      
+    }
+  },
   created() {
-    this.person = person;
-    console.log(this.person);
   }
 }
 </script>

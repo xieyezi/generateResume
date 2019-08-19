@@ -71,9 +71,6 @@
         </router-link>
       </div>
     </div>
-    <div class="start">
-      <el-button type="primary" class="start" style="font-size:18px;width:160px;font-weight:300;" @click="download">下载全部<i class="el-icon-right el-icon--right"></i></el-button>
-    </div>
   </div>
 </template>
 <script>

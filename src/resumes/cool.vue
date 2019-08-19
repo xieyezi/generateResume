@@ -1,7 +1,7 @@
 <template>
   <div class="page-wrapper">
     <div id="cool" class="page">
-      <div class="page-inner">
+      <div class="page-inner" v-if="this.person.birth">
         <div class="resume">
           <div class="banner">
             <div
@@ -20,7 +20,7 @@
 
                 <div class="section-content section-content--plain">
                   {{ person.about }}
-                  <br />
+                  <br /> 
                   <br />
                   {{ person.knowledge }}
                 </div>
@@ -70,7 +70,7 @@
                   </a>
 
                   <div class="section-link">
-                    <Icon type="ios-phone-portrait" />
+                  <i class="el-icon-phone"></i>
                     {{ person.contact.phone }}
                   </div>
 
@@ -79,7 +79,7 @@
                     class="section-link"
                     href="person.contact.website"
                   >
-                    <Icon type="ios-home-outline" />
+                    <i class="el-icon-phone"></i>
                     {{ person.contact.website }}
                   </a>
 
@@ -88,17 +88,17 @@
                     class="section-link"
                     href="contactLinks.linkedin"
                   >
-                    <Icon type="logo-linkedin" />
+                    <i class="el-icon-phone"></i>
                     {{ person.contact.linkedin }}
                   </a>
 
                   <a v-if="person.contact.github" class="section-link" href="contactLinks.github">
-                    <Icon type="logo-github" />
+                    <i class="el-icon-phone"></i>
                     {{ person.contact.github }}
                   </a>
 
                   <a v-if="person.contact.medium" class="section-link" href="contactLinks.medium">
-                    <i class="section-link__icon fa fa-medium"></i>
+                   <i class="el-icon-phone"></i>
                     {{ person.contact.medium }}
                   </a>
                 </div>
@@ -108,7 +108,7 @@
             <div class="content__right">
               <div class="section">
                 <div class="section-headline">
-                 <Icon type="md-list-box" />
+                  <i class=" el-icon-suitcase"></i>
                  工作经历
                 </div>
 
@@ -135,28 +135,28 @@
 
               <div class="section">
                 <div class="section-headline">
-                 <Icon type="ios-school-outline" />
+                 <i class=" el-icon-school"></i>
                   教育经历
                 </div>
 
                 <div class="section-content">
                   <a
-                    v-for="(education, index) in person.education"
+                    v-for="(item, index) in person.education"
                     class="section-content__item"
                     :key="index"
                     href="education.website"
                   >
-                    <span class="section-content__header">{{ education.school }}</span>
-                    <span class="section-content__subheader">{{ education.degree }}</span>
-                    <span class="section-content__text">{{ education.timeperiod }}</span>
-                    <span class="section-content__text--light">{{ education.description }}</span>
+                    <span class="section-content__header">{{ item.school }}</span>
+                    <span class="section-content__subheader">{{ item.degree }}</span>
+                    <span class="section-content__text">{{ item.timeperiod }}</span>
+                    <span class="section-content__text--light">{{ item.description }}</span>
                   </a>
                 </div>
               </div>
 
               <div v-if="person.projects" class="section">
                 <div class="section-headline">
-                  <Icon type="md-code-working" />
+                 <i class=" el-icon-school"></i>
                   项目经历
                 </div>
 
@@ -168,13 +168,14 @@
                     href="project.url"
                   >
                     <span class="section-content__header">{{ project.name }}</span>
-                    <span class="section-content__subheader">{{ project.platform }}</span>
-                    <span class="section-content__text">{{ project.description }}</span>
+                    <span class="section-content__text" style="display:inline-block;padding-right:10px;padding-top:10px;">开发语言</span><span>{{project.platform}}</span>
+                    <span class="section-content__text" style="padding-top:10px;">项目描述</span><p>{{project.description}}</p>
+                    <span class="section-content__text" style="display:inline-block;padding-right:10px;padding-top:10px;">项目地址</span><span>{{project.url}}</span>
                   </a>
                 </div>
               </div>
 
-              <div v-if="person.contributions" class="section">
+              <div v-if="person.contributions.length >1" class="section">
                 <div class="section-headline">
                   <i class="section-headline__icon fa fa-heart"></i>
                   贡献
@@ -197,51 +198,6 @@
                 </div>
               </div>
 
-              <div v-if="person.honors" class="section">
-                <div class="section-headline">
-                  <i class="section-headline__icon fa fa-sign-language"></i>
-                  {{lang.honors}}
-                </div>
-
-                <div class="section-content-grid">
-                  <a
-                    v-for="(honor, index) in person.honors"
-                    class="section-content__item-grid"
-                    :key="index"
-                    href="honor.url"
-                  >
-                    <span class="section-content__header">{{ honor.name }}</span>
-                    <span class="section-content__text">{{ honor.description }}</span>
-                    <span
-                      class="section-content__text--light"
-                      style="word-break: break-all;"
-                    >{{ honor.url }}</span>
-                  </a>
-                </div>
-              </div>
-
-              <div v-if="person.advantages" class="section">
-                <div class="section-headline">
-                  <i class="section-headline__icon fa fa-thumbs-up"></i>
-                  {{lang.advantages}}
-                </div>
-
-                <div class="section-content-grid">
-                  <a
-                    v-for="(advantage, index) in person.advantages"
-                    class="section-content__item-grid"
-                    :key="index"
-                    href="advantage.url"
-                  >
-                    <span class="section-content__header">{{ advantage.name }}</span>
-                    <span class="section-content__text">{{ advantage.description }}</span>
-                    <span
-                      class="section-content__text--light"
-                      style="word-break: break-all;"
-                    >{{ advantage.url }}</span>
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -249,23 +205,42 @@
         </div>
       </div>
     </div>
+    <div class="start">
+      <el-button type="primary" class="start" style="font-size:16px;width:140px;font-weight:300;" @click="download">下载<i class="el-icon-download el-icon--right"></i></el-button>
+    </div>
   </div>
 </template>
 
 <script>
-import { person } from "../../resume/data";
+import { Person } from "../../resume/data";
+import { mapGetters } from "vuex";
 export default {
   name: "cool",
   data() {
     return {
-      person: {}
+     person:{}
     };
   },
+  computed: {
+    ...mapGetters([
+      "personinfo"
+    ])
+  },
+  mounted(){
+    console.log(this.personinfo);
+    if(this.personinfo){
+      this.person = this.personinfo;
+    }else{
+       this.person = Person;
+    }
+  },
   components: {},
-  methods: {},
+  methods: {
+    download(){
+        
+    }
+  },
   created() {
-    this.person = person;
-    console.log(this.person);
   }
 }
 </script>
@@ -288,7 +263,6 @@ a {
     color: inherit;
   }
 }
-
 .resume {
   position: relative;
   font-family: "Roboto" !important;
@@ -395,7 +369,7 @@ a {
 
   &__item {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
   }
 
   &__header {

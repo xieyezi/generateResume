@@ -14,16 +14,15 @@
         class="demo-ruleForm"
       >
         <el-form-item label="你的大名" prop="name">
-          <el-input v-model="personFrom.name" placeholder="你的大名" style="width:50%;"></el-input>
+          <el-input v-model="personFrom.name" placeholder="你的大名" style="width:60%;"></el-input>
         </el-form-item>
 
         <el-form-item label="生日和城市" prop="birth">
-          <el-date-picker
+            <el-input
             v-model="personFrom.birth.year"
-            type="month"
-            placeholder="出生年月"
-            style="width:40%;display:inline-block;"
-          ></el-date-picker>
+            placeholder="出生年月(例如1996.10)"
+            style="width:30%;display:inline-block;"
+          ></el-input>
           <p style="display:inline-block;padding:0px 5px 0px 5px;">出生于</p>
           <el-input
             v-model="personFrom.birth.location"
@@ -46,23 +45,20 @@
           <el-input v-model="personFrom.position" placeholder="你现在想要应聘的职位" style="width:50%;"></el-input>
         </el-form-item>
 
-        <el-form-item label="最高学历" prop="education">
-          <el-input v-model="personFrom.education.degree" placeholder="最高学位" style="width:60%;"></el-input>
+        <el-form-item label="最高学历" prop="education" v-for="(item,index) in personFrom.education">
+          <el-input v-model="personFrom.education[index].degree" placeholder="最高学位" style="width:60%;"></el-input>
           <el-input
-            v-model="personFrom.education.description"
+            v-model="personFrom.education[index].description"
             placeholder="毕业学校"
             style="width:60%;padding-top:10px;"
           ></el-input>
-          <el-date-picker
-            v-model="personFrom.education.timeperiod"
-            type="monthrange"
-            range-separator="至"
-            start-placeholder="开始时间"
-            end-placeholder="结束时间"
-            style="width:60%;margin-top:10px;"
-          ></el-date-picker>
           <el-input
-            v-model="personFrom.education.website"
+            v-model="personFrom.education[index].timeperiod"
+            placeholder="时间(例如2015.9-2019.6)"
+            style="width:60%;padding-top:10px;"
+          ></el-input>
+          <el-input
+            v-model="personFrom.education[index].website"
             placeholder="学校官网"
             style="width:60%;padding-top:10px;"
           ></el-input>
@@ -83,14 +79,12 @@
             placeholder="你的职位"
             style="width:60%;padding-top:10px;"
           ></el-input>
-          <el-date-picker
+           <el-input
             v-model="personFrom.experience[index].timeperiod"
-            type="monthrange"
-            range-separator="至"
-            start-placeholder="开始时间"
-            end-placeholder="结束时间"
-            style="width:60%;margin-top:10px;"
-          ></el-date-picker>
+            placeholder="时间(例如2018.8-2019.4)"
+            style="width:60%;padding-top:10px;"
+          ></el-input>
+    
           <el-input
             v-model="personFrom.experience[index].website"
             placeholder="公司官网"
@@ -397,6 +391,7 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
+          console.log(this.personFrom)
           this.savePerson(this.personFrom);
           this.dialogVisiable = false;
           this.$router.push({
