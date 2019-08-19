@@ -1,6 +1,6 @@
 <template>
   <div class="page-wrapper">
-    <div id="cool" class="page">
+    <div id="side-bar" class="page">
       <div class="page-inner" v-if="this.person.contact">
         <div id="resume2" class="resume">
           <div class="top-row">
@@ -104,6 +104,7 @@
 
 <script>
 import { Person } from "../../resume/data";
+import {downloadPDF} from '../utils/htmlToPdf';
 import { mapGetters } from "vuex";
 export default {
   name: "side-bar",
@@ -119,16 +120,18 @@ export default {
   },
   mounted(){
     console.log(this.personinfo);
-    if(this.personinfo){
+    if(this.personinfo.name){
       this.person = this.personinfo;
     }else{
        this.person = Person;
     }
+     this.htmlTitle = `${this.person.name}的个人简历`
   },
   components: {},
   methods: {
     download(){
-      
+        //导出PDF
+        downloadPDF( document.querySelector('#side-bar'), this.htmlTitle);
     }
   },
   created() {

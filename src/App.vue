@@ -53,4 +53,14 @@ body {
   bottom: 15%;
   animation: toUp 0.5s ease-out both;
 }
+@keyframes toUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </style>

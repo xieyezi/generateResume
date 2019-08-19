@@ -1,6 +1,6 @@
 <template>
   <div class="page-wrapper">
-    <div id="cool" class="page">
+    <div id="left-right" class="page">
       <div class="page-inner" v-if="this.person.contact">
         <div class="resume" id="resume1">
           <div class="row text-center">
@@ -110,6 +110,7 @@
 
 <script>
 import { Person } from "../../resume/data";
+import {downloadPDF} from '../utils/htmlToPdf';
 import { mapGetters } from "vuex";
 export default {
   name: "left-right",
@@ -125,16 +126,18 @@ export default {
   },
   mounted(){
     console.log(this.personinfo);
-    if(this.personinfo){
+    if(this.personinfo.name){
       this.person = this.personinfo;
     }else{
        this.person = Person;
     }
+    this.htmlTitle = `${this.person.name}的个人简历`
   },
   components: {},
   methods: {
     download(){
-      
+       //导出PDF
+        downloadPDF( document.querySelector('#left-right'), this.htmlTitle);
     }
   },
   created() {

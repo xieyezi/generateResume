@@ -1,4 +1,4 @@
-import {loadPersonInfo} from "../cache/cache";
+import {loadPersonInfo} from "../utils/cache";
 
 const state = {
     personinfo:loadPersonInfo(),  //个人信息

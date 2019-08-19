@@ -1,6 +1,6 @@
 <template>
   <div class="page-wrapper">
-    <div id="cool" class="page">
+    <div id="oblique" class="page">
       <div class="page-inner" v-if="this.person.contact">
         <div id="resume3" class="resume">
           <div class="resume-header">
@@ -57,7 +57,7 @@
               <h3>专业技能</h3>
               <div class="skills" v-for="skill in person.skills" :key="skill.name">
                 <div class="skill-block">
-                  <i class="material-icons">details</i>
+                  <i class="fa fa-hand-rock-o"></i>
                   <span class="skill">{{skill.name}}</span>
                 </div>
               </div>
@@ -92,6 +92,7 @@
 
 <script>
 import { Person } from "../../resume/data";
+import {downloadPDF} from '../utils/htmlToPdf';
 import { mapGetters } from "vuex";
 export default {
   name: "oblique",
@@ -107,16 +108,18 @@ export default {
   },
   mounted(){
     console.log(this.personinfo);
-    if(this.personinfo){
+    if(this.personinfo.name){
       this.person = this.personinfo;
     }else{
        this.person = Person;
     }
+    this.htmlTitle = `${this.person.name}的个人简历`
   },
   components: {},
   methods: {
     download(){
-      
+       //导出PDF
+        downloadPDF( document.querySelector('#oblique'), this.htmlTitle);
     }
   },
   created() {

@@ -4,13 +4,9 @@
       <div class="page-inner" v-if="this.person.birth">
         <div class="resume">
           <div class="banner">
-            <div
-              class="banner__fullname"
-            >{{ person.name}}</div>
+            <div class="banner__fullname">{{ person.name}}</div>
             <div class="banner__position">{{ person.position }}</div>
-            <div
-              class="banner__position"
-            >{{person.birth.year}} 出生于 {{person.birth.location}}</div>
+            <div class="banner__position">{{person.birth.year}} 出生于 {{person.birth.location}}</div>
           </div>
 
           <div class="content">
@@ -20,7 +16,7 @@
 
                 <div class="section-content section-content--plain">
                   {{ person.about }}
-                  <br /> 
+                  <br />
                   <br />
                   {{ person.knowledge }}
                 </div>
@@ -41,7 +37,9 @@
               </div>
 
               <div v-if="person.jobs" class="section">
-                <div class="section-headline">工作经历</div>
+                <div class="section-headline">
+                  工作经历
+                </div>
 
                 <div class="section-content-grid">
                   <a
@@ -60,17 +58,17 @@
 
                 <div class="section-content section-content--plain">
                   <div class="section-link">
-                    <i class=" el-icon-map-location"></i>
+                    <i class="fa fa-building-o"></i>
                     {{ person.contact.street }}
                   </div>
 
                   <a class="section-link" href="contactLinks.email">
-                   <i class="el-icon-phone"></i>
+                    <i class="fa fa-envelope"></i>
                     {{ person.contact.email }}
                   </a>
 
                   <div class="section-link">
-                  <i class="el-icon-phone"></i>
+                    <i class="fa fa-phone"></i>
                     {{ person.contact.phone }}
                   </div>
 
@@ -79,26 +77,17 @@
                     class="section-link"
                     href="person.contact.website"
                   >
-                    <i class="el-icon-phone"></i>
+                    <i class="fa fa-paper-plane"></i>
                     {{ person.contact.website }}
                   </a>
 
-                  <a
-                    v-if="person.contact.linkedin"
-                    class="section-link"
-                    href="contactLinks.linkedin"
-                  >
-                    <i class="el-icon-phone"></i>
-                    {{ person.contact.linkedin }}
-                  </a>
-
                   <a v-if="person.contact.github" class="section-link" href="contactLinks.github">
-                    <i class="el-icon-phone"></i>
+                    <i class="fa fa-github"></i>
                     {{ person.contact.github }}
                   </a>
 
                   <a v-if="person.contact.medium" class="section-link" href="contactLinks.medium">
-                   <i class="el-icon-phone"></i>
+                    <i class="el-icon-phone"></i>
                     {{ person.contact.medium }}
                   </a>
                 </div>
@@ -108,10 +97,9 @@
             <div class="content__right">
               <div class="section">
                 <div class="section-headline">
-                  <i class=" el-icon-suitcase"></i>
-                 工作经历
+                   <i class="fa fa-suitcase fa-lg" style="color:rgb(52,73,94);"></i>
+                  工作经历
                 </div>
-
                 <div class="section-content">
                   <a
                     v-for="(experience, index) in person.experience"
@@ -135,7 +123,7 @@
 
               <div class="section">
                 <div class="section-headline">
-                 <i class=" el-icon-school"></i>
+                  <i class="fa fa-mortar-board fa-lg" style="color:rgb(52,73,94);"></i>
                   教育经历
                 </div>
 
@@ -156,11 +144,11 @@
 
               <div v-if="person.projects" class="section">
                 <div class="section-headline">
-                 <i class=" el-icon-school"></i>
+                   <i class="fa fa-folder fa-lg" style="color:rgb(52,73,94);"></i>
                   项目经历
                 </div>
 
-                <div class="section-content-grid">
+                <div class="section-content">
                   <a
                     v-for="(project, index) in person.projects"
                     :key="index"
@@ -168,9 +156,18 @@
                     href="project.url"
                   >
                     <span class="section-content__header">{{ project.name }}</span>
-                    <span class="section-content__text" style="display:inline-block;padding-right:10px;padding-top:10px;">开发语言</span><span>{{project.platform}}</span>
-                    <span class="section-content__text" style="padding-top:10px;">项目描述</span><p>{{project.description}}</p>
-                    <span class="section-content__text" style="display:inline-block;padding-right:10px;padding-top:10px;">项目地址</span><span>{{project.url}}</span>
+                    <span
+                      class="section-content__text"
+                      style="display:inline-block;padding-right:10px;padding-top:10px;"
+                    >开发语言</span>
+                    <span>{{project.platform}}</span>
+                    <span class="section-content__text" style="padding-top:10px;">项目描述</span>
+                    <p>{{project.description}}</p>
+                    <span
+                      class="section-content__text"
+                      style="display:inline-block;padding-right:10px;padding-top:10px;"
+                    >项目地址</span>
+                    <span>{{project.url}}</span>
                   </a>
                 </div>
               </div>
@@ -197,52 +194,60 @@
                   </a>
                 </div>
               </div>
-
             </div>
           </div>
 
-          <img class="picture" />
+          <img class="picture" src="../../resume/person.jpg" />
         </div>
       </div>
     </div>
     <div class="start">
-      <el-button type="primary" class="start" style="font-size:16px;width:140px;font-weight:300;" @click="download">下载<i class="el-icon-download el-icon--right"></i></el-button>
+      <el-button
+        type="primary"
+        class="start"
+        style="font-size:16px;width:140px;font-weight:300;"
+        @click="download"
+      >
+        下载
+        <i class="el-icon-download el-icon--right"></i>
+      </el-button>
     </div>
   </div>
 </template>
 
 <script>
 import { Person } from "../../resume/data";
+import { downloadPDF } from "../utils/htmlToPdf";
 import { mapGetters } from "vuex";
 export default {
   name: "cool",
   data() {
     return {
-     person:{}
+      person: {}
     };
   },
   computed: {
-    ...mapGetters([
-      "personinfo"
-    ])
+    ...mapGetters(["personinfo"])
   },
-  mounted(){
+  mounted() {
     console.log(this.personinfo);
-    if(this.personinfo){
+    console.log(Person);
+    if (this.personinfo.name) {
       this.person = this.personinfo;
-    }else{
-       this.person = Person;
+    } else {
+      this.person = Person;
     }
+    this.htmlTitle = `${this.person.name}的个人简历`;
   },
   components: {},
   methods: {
-    download(){
-        
+    download() {
+      //导出PDF
+      downloadPDF(document.querySelector("#cool"), this.htmlTitle);
     }
   },
-  created() {
-  }
-}
+  created() {}
+};
 </script>
 
 <style lang="less" scoped>
@@ -263,11 +268,14 @@ a {
     color: inherit;
   }
 }
+i{
+  color:white;
+  margin-right: 5px;
+}
 .resume {
   position: relative;
   font-family: "Roboto" !important;
   font-size: 0.9em;
-  
 }
 
 .picture {

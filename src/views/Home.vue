@@ -5,7 +5,7 @@
       <div class="intro">
         <h2 class="slogan">满网络找简历模版心力交瘁？试试换个方式!</h2>
         <p class="sub-slogan">多个优美简历模版 + Vue强力驱动,帮助你迅速制作出漂亮简历。</p>
-         <el-button type="primary" style="font-size:20px;width:200px;" class="start" @click="go">马上开始</el-button>
+         <el-button type="primary" style="font-size:20px;width:200px;" class="go" @click="go">马上开始</el-button>
       </div>
     </div>
   </div>
@@ -71,7 +71,7 @@ export default {
   font-size: 30px;
   animation: left2right 0.5s ease-out both;
 }
-.start {
+.go {
   margin-top: 20px;
   animation: toUp 0.5s 0.2s ease-out both;
   /* background: #d22e3e;

@@ -1,6 +1,6 @@
 <template>
   <div class="page-wrapper">
-    <div id="cool" class="page">
+    <div id="material-dark" class="page">
       <div class="page-inner" v-if="this.person.birth">
         <div class="resume">
           <div class="leftCol m_box">
@@ -9,7 +9,7 @@
             <div class="section-headline">联系方式</div>
             <div class="item">
               <div class="icon">
-                <i class="material-icons">account_circle</i>
+                <i class="fa fa-map-marker"></i>
               </div>
               <div class="text">
                 <ul>
@@ -20,7 +20,7 @@
 
             <div class="item">
               <div class="icon">
-                <i class="material-icons">location_city</i>
+                <i class="fa fa-building-o"></i>
               </div>
               <div class="text">
                 <ul>
@@ -33,7 +33,7 @@
             <a href="contactLinks.phone">
               <div class="item">
                 <div class="icon">
-                  <i class="material-icons">phone</i>
+                   <i class="fa fa-phone"></i>
                 </div>
                 <div class="text">{{person.contact.phone}}</div>
               </div>
@@ -42,7 +42,7 @@
             <a href="contactLinks.email">
               <div class="item">
                 <div class="icon">
-                  <i class="material-icons">email</i>
+                  <i class="fa fa-envelope"></i>
                 </div>
                 <div class="text">{{person.contact.email}}</div>
               </div>
@@ -63,7 +63,7 @@
             <a v-if="person.contact.website" href="person.contact.website" target="_blank">
               <div class="item">
                 <div class="icon">
-                  <i class="material-icons">language</i>
+                   <i class="fa fa-paper-plane"></i>
                 </div>
                 <div class="text">
                   <span>{{person.contact.website}}</span>
@@ -130,6 +130,7 @@
 
 <script>
 import { Person } from "../../resume/data";
+import {downloadPDF} from '../utils/htmlToPdf';
 import { mapGetters } from "vuex";
 export default {
   name: "material-dark",
@@ -145,16 +146,18 @@ export default {
   },
   mounted(){
     console.log(this.personinfo);
-    if(this.personinfo){
+    if(this.personinfo.name){
       this.person = this.personinfo;
     }else{
        this.person = Person;
     }
+    this.htmlTitle = `${this.person.name}的个人简历`
   },
   components: {},
   methods: {
     download(){
-      
+       //导出PDF
+        downloadPDF( document.querySelector('#material-dark'), this.htmlTitle);
     }
   },
   created() {

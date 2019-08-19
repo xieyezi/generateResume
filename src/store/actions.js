@@ -1,5 +1,5 @@
 import * as types from './mutation-types'
-import { savePersonInfo, deletePersonInfo, } from '../cache/cache'
+import { savePersonInfo, deletePersonInfo, } from '../utils/cache'
 import { personinfo } from "./getters";
 
 /**保存个人信息

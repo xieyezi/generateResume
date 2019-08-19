@@ -3,8 +3,9 @@
     <el-dialog
       title="输入你的信息,可能这会花费一些时间,但是效果决定让你惊艳😀"
       :visible.sync="dialogVisiable"
-      width="60%"
       :before-close="beforeClose"
+      :close-on-click-modal="false"
+      :show-close="false"
     >
       <el-form
         :model="personFrom"
@@ -14,20 +15,20 @@
         class="demo-ruleForm"
       >
         <el-form-item label="你的大名" prop="name">
-          <el-input v-model="personFrom.name" placeholder="你的大名" style="width:60%;"></el-input>
+          <el-input v-model="personFrom.name" placeholder="你的大名" style="width:55%;"></el-input>
         </el-form-item>
 
         <el-form-item label="生日和城市" prop="birth">
             <el-input
             v-model="personFrom.birth.year"
             placeholder="出生年月(例如1996.10)"
-            style="width:30%;display:inline-block;"
+            style="width:25%;display:inline-block;"
           ></el-input>
           <p style="display:inline-block;padding:0px 5px 0px 5px;">出生于</p>
           <el-input
             v-model="personFrom.birth.location"
             placeholder="出生城市"
-            style="width:30%;display:inline-block;"
+            style="width:25%;display:inline-block;"
           ></el-input>
         </el-form-item>
 
@@ -40,9 +41,17 @@
             show-word-limit
           ></el-input>
         </el-form-item>
-
+        <el-form-item label="个人优点" prop="knowledge" style="width:60%;">
+          <el-input
+            v-model="personFrom.knowledge"
+            type="textarea"
+            placeholder="用一句话介绍你的优点"
+            maxlength="20"
+            show-word-limit
+          ></el-input>
+        </el-form-item>
         <el-form-item label="职位" prop="position">
-          <el-input v-model="personFrom.position" placeholder="你现在想要应聘的职位" style="width:50%;"></el-input>
+          <el-input v-model="personFrom.position" placeholder="你现在想要应聘的职位" style="width:60%;"></el-input>
         </el-form-item>
 
         <el-form-item label="最高学历" prop="education" v-for="(item,index) in personFrom.education">
@@ -67,6 +76,7 @@
         <el-form-item
           label="工作经历"
           prop="experience"
+          :key = "experice.company"
           v-for="(experice,index) in personFrom.experience"
         >
           <el-input
@@ -108,7 +118,7 @@
           >删除</el-button>
         </el-form-item>
 
-        <el-form-item label="项目经历" prop="projects" v-for="(project,index) in personFrom.projects">
+        <el-form-item label="项目经历" prop="projects" :key="project.name" v-for="(project,index) in personFrom.projects">
           <el-input v-model="personFrom.projects[index].name" placeholder="项目名称" style="width:60%;"></el-input>
           <el-input
             v-model="personFrom.projects[index].platform"
@@ -138,7 +148,7 @@
           >删除</el-button>
         </el-form-item>
 
-        <el-form-item label="专业技能" prop="skills" v-for="(skill,index) in personFrom.skills">
+        <el-form-item label="专业技能" prop="skills" :key="skill.level" v-for="(skill,index) in personFrom.skills">
           <el-input v-model="personFrom.skills[index].name" placeholder="名称" style="width:60%;"></el-input>
           <el-input
             v-model="personFrom.skills[index].level"
@@ -154,7 +164,7 @@
           >删除</el-button>
         </el-form-item>
 
-        <el-form-item label="兴趣爱好" prop="hobbies" v-for="(hobby,index) in personFrom.hobbies">
+        <el-form-item label="兴趣爱好" :key=hobby.name prop="hobbies" v-for="(hobby,index) in personFrom.hobbies">
           <el-input v-model="personFrom.hobbies[index].name" placeholder="名称" style="width:60%;"></el-input>
           <el-button type="primary" style="margin-left:20px;" @click="addHobby">添加兴趣爱好</el-button>
           <el-button
@@ -274,7 +284,8 @@ export default {
           city: "",
           website: "",
           github: ""
-        }
+        },
+        knowledge: "",
       },
       ruleForm: {
         name: "",
@@ -318,6 +329,9 @@ export default {
         ],
         contact: [
           { required: true, message: "请输入你的联系方式", trigger: "blur" }
+        ],
+        knowledge:[
+          { required: true, message: "请输入你的优点", trigger: "blur" }
         ]
       }
     };
@@ -403,6 +417,10 @@ export default {
             type: "success"
           });
         } else {
+          this.$message({
+            message: "请完整填写信息",
+            type: "error"
+          });
           console.log("error submit!!");
           return false;
         }
