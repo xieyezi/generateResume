@@ -3,7 +3,7 @@
 ## docker学习笔记
 
   这个项目我准备用docker来部署，所以会涉及到docker的相关知识。以下为docker的学习笔记。
-### image文件
+### 镜像(image)文件
   1. docker把应用程序及其依赖，打包在image文件里面
   2. image文件可以看做是容器的模板，docker根据image文件生成容器的实例
   3. 同一个image文件，可以生成多个同时运行的模板
@@ -12,7 +12,7 @@
   6. 运行image文件:`docker container run hello-world`,该命令会从image文件，生成一个正在运行的容器实例
   7. 终止正在运行的容器: `docker container kill [containID]`
 
-### 容器文件
+### 容器(container)文件
    1. 容器文件指的是image文件生成的容器实例
    2. 关闭容器不会删除容器，只会停止运行
    3. 查看本机正在运行的容器: `docker container ls`
@@ -117,3 +117,21 @@ docker-compose stop //关闭所有服务
 docker-compose rm   // 删除所有容器
 ```
 
+### docker更改镜像加速器
+  进入 `/etc/docker/daemon.json` 里面编辑(没有这个文件请新建):
+
+```
+{
+  "registry-mirrors": [
+    "https://dockerhub.azk8s.cn",
+    "https://reg-mirror.qiniu.com"
+  ]
+}
+```
+   然后重启docker即可:
+
+```
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart docker
+```
+然后执行 `docker info` 查看配置是否生效
