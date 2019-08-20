@@ -94,8 +94,8 @@
 
  `docker container exec`  命令用于进入一个正在运行的 docker 容器。如果docker run命令运行容器的时候，没有使用-it参数，就要用这个命令进入容器。一旦进入了容器，就可以在容器的 Shell 执行命令了。
 
-   
-   
+  
+
 ```
 docker container exec -it [containerID] /bin/bash
 ```
@@ -108,3 +108,12 @@ docker container exec -it [containerID] /bin/bash
 ```
 docker container cp [containID]:[/path/to/file] 
 ```
+
+### Docker Compose工具
+  Compose可以管理多个Docker容器组成一个应用。定义一个 `.yaml`的配置文件 `docker-compose.yml`,在这个文件里面写好多个容器之间的调用关系。然后只要一个命令，即可同时启动/关闭这些容器:
+```
+docker-compose up   //启动所有服务
+docker-compose stop //关闭所有服务
+docker-compose rm   // 删除所有容器
+```
+
