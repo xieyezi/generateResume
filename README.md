@@ -73,14 +73,15 @@
   （1）`docker container start`   
 
 
+       
+       
     前面的docker container run命令是新建容器，每运行一次，就会新建一个容器。同样的命令运行两次，就会生成两个一模一样的容器文件。如果希望重复使用容器，就要使用docker container start命令，它用来启动已经生成、已经停止运行的容器文件:
       
-      
+
     ```
     docker container start [containerID]
     ```
-（2）`docker container stop`
-
+（2）`docker container stop`       
    前面的docker container kill命令终止容器运行，相当于向容器里面的主进程发出 SIGKILL 信号。而docker container stop命令也是用来终止容器运行，相当于向容器里面的主进程发出 SIGTERM 信号，然后过一段时间再发出 SIGKILL 信号。 
    ```
    bash container stop [containerID]
