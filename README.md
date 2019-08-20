@@ -92,13 +92,13 @@
 
 （4）`docker container exec`
 
-    `docker container exec` 命令用于进入一个正在运行的 docker 容器。如果docker run命令运行容器的时候，没有使用-it参数，就要用这个命令进入容器。一旦进入了容器，就可以在容器的 Shell 执行命令了。
-     ```
-     docker container exec -it [containerID] /bin/bash
-     ```
+   `docker container exec`  命令用于进入一个正在运行的 docker 容器。如果docker run命令运行容器的时候，没有使用-it参数，就要用这个命令进入容器。一旦进入了容器，就可以在容器的 Shell 执行命令了。
+```
+docker container exec -it [containerID] /bin/bash
+```
 （5）`docker container cp`
 
      `docker container cp` 命令用于从正在运行的 Docker 容器里面，将文件拷贝到本机。下面是拷贝到当前目录的写法。
-     ```
-     docker container cp [containID]:[/path/to/file] 
-     ```
+```
+docker container cp [containID]:[/path/to/file] 
+```
