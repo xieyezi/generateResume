@@ -144,6 +144,8 @@ $ sudo systemctl restart docker
       
   我的看法：应当还是要打包的，但是打包操作是在Dockerfile文件里面执行吗？或者还有一种思路，就是先在本地打包，并把Dcokerfile也打包进dist目录，在服务器上拉取代码，然后进入dist目录，再根据Dockerfile文件制作image？
   2. 如何利用 `docker-compose` 将vue前台服务和后台服务写到同一个image里面？(前台和后台是分开的，前台的请求会反向代理到后台，后台为一个Node.js服务，不涉及到数据库。等于说，前台服务需要nginx，后台则需要node)
+  
+  
   3. 如何实现以下的docker编排？
   
   ![docker服务编排.png](https://i.loli.net/2019/08/20/ZTr3s1CbV7vG9Bq.png)
