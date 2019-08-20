@@ -151,9 +151,10 @@ $ sudo systemctl restart docker
   
   ![docker服务编排.png](https://i.loli.net/2019/08/20/ZTr3s1CbV7vG9Bq.png)
 
-### 查看container的IP
+### 查看container的IP地址
 
 ```
 docker exect -it [containerName] bash
 cat /etc/hosts
 ```
+   或者直接使用 `docker inspect [containerName]` 查看IP地址
