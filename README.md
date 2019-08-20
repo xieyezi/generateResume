@@ -31,6 +31,8 @@
    npm-debug.log
   ```
    该文件会排除以上的三个路径下的文件，告诉docker不要将这三个打包到image文件。
+
+   
   3. 在项目的根目录下，新建一个文本文件`Dockerfile`:
   ```
     FROM node:8.4       //指定node的版本
