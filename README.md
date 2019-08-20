@@ -103,7 +103,7 @@ docker container exec -it [containerID] /bin/bash
 
 （5）`docker container cp`
 
-     `docker container cp` 命令用于从正在运行的 Docker 容器里面，将文件拷贝到本机。下面是拷贝到当前目录的写法。  
+  `docker container cp` 命令用于从正在运行的 Docker 容器里面，将文件拷贝到本机。下面是拷贝到当前目录的写法。  
      
 ```
 docker container cp [containID]:[/path/to/file] 
