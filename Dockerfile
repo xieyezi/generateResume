@@ -1,9 +1,9 @@
 # resume Dockerfile
 
 #设置基础镜像
-FROM nginx;
+FROM nginx
 #设置作者信息
-MAINTAINER www.xieyezi.xyz;
+MAINTAINER www.xieyezi.xyz
 #设置容器工作目录
 WORKDIR /app
 
