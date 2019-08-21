@@ -1,4 +1,5 @@
 .gitignore
 .idea
+.dockerNote.md
 .git/
 node_modules/

@@ -10,7 +10,7 @@ WORKDIR /app
 #将当前所有文件拷贝至容器/app目录下
 COPY . /app
 #将项目中的nginx.conf文件拷贝至容器内的nginx.conf文件作为配置文件
-COPY ./nginx.conf /nginx/conf/nginx.conf
+COPY nginx.conf /app/
 
 #进入容器之后执行如下命令
 RUN npm config set registry "https://registry.npm.taobao.org/" \
