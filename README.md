@@ -158,3 +158,6 @@ docker exect -it [containerName] bash
 cat /etc/hosts
 ```
    或者直接使用 `docker inspect [containerName]` 查看IP地址
+
+
+
