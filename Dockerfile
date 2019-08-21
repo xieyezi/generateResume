@@ -1,8 +1,8 @@
 # resum Dockerfile
 
 #指定node镜像对项目进行依赖安装和打包
-FROM node
-COPY . /app/
+FROM node:alpine
+COPY . /app
 RUN npm config set registry "https://registry.npm.taobao.org/" \
     npm install \
     npm run build \
