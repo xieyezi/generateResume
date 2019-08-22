@@ -1,7 +1,7 @@
 # resum Dockerfile
 
 #指定node镜像对项目进行依赖安装和打包
-FROM node:alpine as builder
+FROM node:10.16.0 AS builder
 # 将容器的工作目录设置为/app(当前目录，如果/app不存在，WORKDIR会创建/app文件夹)
 WORKDIR /app 
 COPY package.json /app/ 
