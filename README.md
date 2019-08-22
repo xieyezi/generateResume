@@ -57,15 +57,23 @@
 ### 生成容器
    `docker container run ` 命令会从image文件生成容器:
    ```
-    docker container run -p 8000:3000 -it [iamgeName] /bin/bash
+    docker run -p 8000:3000 -it [iamgeName] /bin/bash
    ```
    或者:
    ```
-    docker container run -p 8000:3000 -it [iamgeName]:0.0.1 /bin/bash
+    docker run -p 8000:3000 -it [iamgeName]:0.0.1 /bin/bash
+   ```
+   或者:
+   ```
+   docker run -p 3000:80 -d --name [containerName] [iamgeName]
    ```
    `-p`参数: 容器的3000端口映射到本机的8000端口   
 
-   `-it`参数: 容器的Shell映射到当前的Shell，然后你在本机窗口输入的命令，就会传入到容器    
+   `-it`参数: 容器的Shell映射到当前的Shell，然后你在本机窗口输入的命令，就会传入到容器 
+
+   `-d`参数: 让容器在后台运行
+
+   `--name`参数: 指定容器名称
    
    `/bin/bash`参数: 容器启动以后，内部第一个执行的命令，这里是启动Bash，保证用户可以使用Shell
    当跑完这些命令的时候，会返回一个命令行提示符，然后就可以在里面执行命令了
