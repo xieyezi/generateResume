@@ -19,5 +19,3 @@ COPY --from=builder app/nginx.conf /etc/nginx/nginx.conf
 
 #暴露容器80端口
 EXPOSE 80
-# #配置nginx前台运行
-# CMD ["nginx", "-c", "/etc/nginx/nginx.conf"]
