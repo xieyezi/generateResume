@@ -16,12 +16,16 @@
 ### 简历模板
 
   此处要放图片
-<!-- <div align="center">
- <img src="https://img.shields.io/badge/-vue-green"/>
- <img src="https://img.shields.io/badge/download-pdf-orange"/>
- <img src="https://img.shields.io/badge/TypeScript-v3.5.2-orange"/>
-</div>  -->
-
+<div align="center">
+ <img src="https://i.loli.net/2019/08/23/98JgkM7ydl564pS.jpg"/>
+ <img src="https://i.loli.net/2019/08/23/Ni3nudWU6Br7e2y.jpg"/>
+ <img src="https://i.loli.net/2019/08/23/Amr5qBPVvE16gKc.jpg"/>
+ <img src="https://i.loli.net/2019/08/23/36xkQIpLD5fCiyX.jpg"/>
+ <img src="https://i.loli.net/2019/08/23/WlivmE8zQABU5bM.jpg"/>
+ <img src="https://i.loli.net/2019/08/23/lMGSVmiNu5DfC21.jpg"/>
+ <img src="https://i.loli.net/2019/08/23/YayK1qitwBbShs8.jpg"/>
+ <img src="https://i.loli.net/2019/08/23/EXG2Ij9QxrU57KC.jpg"/>
+</div> 
 ### 开发环境
    1. `vue` 实现前台功能;
    2. `vuex` 实现数据保存;
