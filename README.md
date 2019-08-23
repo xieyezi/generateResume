@@ -15,17 +15,20 @@
 
 ### 简历模板
 
-  此处要放图片
-<div align="center">
- <img src="https://i.loli.net/2019/08/23/98JgkM7ydl564pS.jpg"/>
- <img src="https://i.loli.net/2019/08/23/Ni3nudWU6Br7e2y.jpg"/>
- <img src="https://i.loli.net/2019/08/23/Amr5qBPVvE16gKc.jpg"/>
- <img src="https://i.loli.net/2019/08/23/36xkQIpLD5fCiyX.jpg"/>
- <img src="https://i.loli.net/2019/08/23/WlivmE8zQABU5bM.jpg"/>
- <img src="https://i.loli.net/2019/08/23/lMGSVmiNu5DfC21.jpg"/>
- <img src="https://i.loli.net/2019/08/23/YayK1qitwBbShs8.jpg"/>
- <img src="https://i.loli.net/2019/08/23/EXG2Ij9QxrU57KC.jpg"/>
+
+<div text="center">
+ <img width="50%" src="https://i.loli.net/2019/08/23/98JgkM7ydl564pS.jpg"/>
+ <img width="50%" src="https://i.loli.net/2019/08/23/Ni3nudWU6Br7e2y.jpg"/>
+ <img width="50%" src="https://i.loli.net/2019/08/23/Amr5qBPVvE16gKc.jpg"/>
+ <img width="50%" src="https://i.loli.net/2019/08/23/36xkQIpLD5fCiyX.jpg"/>
+ <img width="50%" src="https://i.loli.net/2019/08/23/WlivmE8zQABU5bM.jpg"/>
+ <img width="50%" src="https://i.loli.net/2019/08/23/lMGSVmiNu5DfC21.jpg"/>
+ <img width="50%" src="https://i.loli.net/2019/08/23/YayK1qitwBbShs8.jpg"/>
+ <img width="50%" src="https://i.loli.net/2019/08/23/EXG2Ij9QxrU57KC.jpg"/>
 </div> 
+
+
+
 ### 开发环境
    1. `vue` 实现前台功能;
    2. `vuex` 实现数据保存;
