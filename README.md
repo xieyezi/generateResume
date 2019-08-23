@@ -17,14 +17,14 @@
 
 
 <div text="center">
- <img width="50%" src="https://i.loli.net/2019/08/23/98JgkM7ydl564pS.jpg"/>
- <img width="50%" src="https://i.loli.net/2019/08/23/Ni3nudWU6Br7e2y.jpg"/>
- <img width="50%" src="https://i.loli.net/2019/08/23/Amr5qBPVvE16gKc.jpg"/>
- <img width="50%" src="https://i.loli.net/2019/08/23/36xkQIpLD5fCiyX.jpg"/>
- <img width="50%" src="https://i.loli.net/2019/08/23/WlivmE8zQABU5bM.jpg"/>
- <img width="50%" src="https://i.loli.net/2019/08/23/lMGSVmiNu5DfC21.jpg"/>
- <img width="50%" src="https://i.loli.net/2019/08/23/YayK1qitwBbShs8.jpg"/>
- <img width="50%" src="https://i.loli.net/2019/08/23/EXG2Ij9QxrU57KC.jpg"/>
+ <img width="48%" src="https://i.loli.net/2019/08/23/98JgkM7ydl564pS.jpg"/>
+ <img width="48%" src="https://i.loli.net/2019/08/23/Ni3nudWU6Br7e2y.jpg"/>
+ <img width="48%" src="https://i.loli.net/2019/08/23/Amr5qBPVvE16gKc.jpg"/>
+ <img width="48%" src="https://i.loli.net/2019/08/23/36xkQIpLD5fCiyX.jpg"/>
+ <img width="48%" src="https://i.loli.net/2019/08/23/WlivmE8zQABU5bM.jpg"/>
+ <img width="48%" src="https://i.loli.net/2019/08/23/lMGSVmiNu5DfC21.jpg"/>
+ <img width="48%" src="https://i.loli.net/2019/08/23/YayK1qitwBbShs8.jpg"/>
+ <img width="48%" src="https://i.loli.net/2019/08/23/EXG2Ij9QxrU57KC.jpg"/>
 </div> 
 
 
