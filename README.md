@@ -3,7 +3,7 @@
  <div align="center">
  <img src="https://img.shields.io/badge/-vue-green"/>
  <img src="https://img.shields.io/badge/download-pdf-orange"/>
- <img src="https://img.shields.io/badge/TypeScript-v3.5.2-orange"/>
+ <img src="https://img.shields.io/badge/build-passing-brightgreen"/>
 </div> 
 <br />
 <br />
