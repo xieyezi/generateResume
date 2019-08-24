@@ -89,11 +89,11 @@ const Person = {
         }
     ],
     contact:{
-        email: "1435398529@email.com",
+        email: "1435398529@qq.com",
         phone: "17783887443",
         street: "成都.武侯区",
         city: "成都.四川.中国",
-        website: "xieyezi.xyz",
+        website: "www.xieyezi.xyz",
         github: "xieyezi"
     }
 }

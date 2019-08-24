@@ -188,7 +188,7 @@ export default {
       overflow: hidden;
       .img {
         flex: none;
-        background: url("../../resume/person.jpg");
+        background: url("https://cdn.xieyezi.com/person.jpg");
         background-position: center;
         background-size: cover;
         height: 250px;

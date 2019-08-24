@@ -483,7 +483,7 @@ h4 {
   }
 }
 #myselfpic {
-  background-image: url("../../resume/person.jpg");
+  background-image: url("https://cdn.xieyezi.com/person.jpg");
   color: black;
 }
 #githubIcon {

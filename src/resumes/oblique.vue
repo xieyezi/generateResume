@@ -170,7 +170,7 @@ export default {
       position: absolute;
       top: 0;
       right: 0;
-      background: url("../../resume/person.jpg");
+      background: url("https://cdn.xieyezi.com/person.jpg");
       background-position: center;
       background-size: cover;
     }

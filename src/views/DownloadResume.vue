@@ -9,7 +9,7 @@
       <div class="preview">
         <router-link v-bind:to="'/cool'">
           <div class="preview-wrapper">
-            <img src="../assets/preview/resume-cool.png" />
+            <img src="https://cdn.xieyezi.com/resume-cool.jpg" />
             <span>清爽</span>
           </div>
         </router-link>
@@ -17,7 +17,7 @@
       <div class="preview">
         <router-link v-bind:to="'/material-dark'">
           <div class="preview-wrapper">
-            <img src="../assets/preview/resume-material-dark.png" />
+            <img src="https://cdn.xieyezi.com/resume-material-dark.jpg" />
             <span>暗灰</span>
           </div>
         </router-link>
@@ -25,7 +25,7 @@
       <div class="preview">
         <router-link v-bind:to="'/left-right'">
           <div class="preview-wrapper">
-            <img src="../assets/preview/resume-left-right.png" />
+            <img src="https://cdn.xieyezi.com/resume-left-right.jpg" />
             <span>纯白1</span>
           </div>
         </router-link>
@@ -33,7 +33,7 @@
       <div class="preview">
         <router-link v-bind:to="'/left-right-rtl'">
           <div class="preview-wrapper">
-            <img src="../assets/preview/resume-left-right-rtl.png" />
+            <img src="https://cdn.xieyezi.com/resume-left-right-rtl.jpg" />
             <span>纯白2</span>
           </div>
         </router-link>
@@ -41,7 +41,7 @@
       <div class="preview">
         <router-link v-bind:to="'/side-bar'">
           <div class="preview-wrapper">
-            <img src="../assets/preview/resume-side-bar.png" />
+            <img src="https://cdn.xieyezi.com/resume-side-bar.jpg" />
             <span>左右1</span>
           </div>
         </router-link>
@@ -49,7 +49,7 @@
       <div class="preview">
         <router-link v-bind:to="'/side-bar-rtl'">
           <div class="preview-wrapper">
-            <img src="../assets/preview/resume-side-bar-rtl.png" />
+            <img src="https://cdn.xieyezi.com/resume-side-bar-rtl.jpg" />
             <span>左右2</span>
           </div>
         </router-link>
@@ -57,7 +57,7 @@
       <div class="preview">
         <router-link v-bind:to="'/oblique'">
           <div class="preview-wrapper">
-            <img src="../assets/preview/resume-oblique.png" />
+            <img src="https://cdn.xieyezi.com/resume-oblique.jpg" />
             <span>上下</span>
           </div>
         </router-link>
@@ -65,7 +65,7 @@
       <div class="preview">
         <router-link v-bind:to="'/creative'">
           <div class="preview-wrapper">
-            <img src="../assets/preview/resume-creative.png" />
+            <img src="https://cdn.xieyezi.com/resume-creative.jpg" />
             <span>创造力</span>
           </div>
         </router-link>

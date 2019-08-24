@@ -216,7 +216,7 @@ export default {
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background-image: url("../../resume/person.jpg");
+      background-image: url("https://cdn.xieyezi.com/person.jpg");
       background-repeat: none;
       background-position: center;
       background-size: cover;

@@ -62,7 +62,7 @@
                     {{ person.contact.street }}
                   </div>
 
-                  <a class="section-link" href="contactLinks.email">
+                  <a class="section-link" :href="person.contact.email">
                     <i class="fa fa-envelope"></i>
                     {{ person.contact.email }}
                   </a>
@@ -75,13 +75,13 @@
                   <a
                     v-if="person.contact.website"
                     class="section-link"
-                    href="person.contact.website"
+                    :href="person.contact.website"
                   >
                     <i class="fa fa-paper-plane"></i>
                     {{ person.contact.website }}
                   </a>
 
-                  <a v-if="person.contact.github" class="section-link" href="contactLinks.github">
+                  <a v-if="person.contact.github" class="section-link" :href="person.contact.github">
                     <i class="fa fa-github"></i>
                     {{ person.contact.github }}
                   </a>
@@ -194,7 +194,7 @@
             </div>
           </div>
 
-          <img class="picture" src="../../resume/person.jpg" />
+          <img class="picture" src="https://cdn.xieyezi.com/person.jpg" />
         </div>
       </div>
     </div>
@@ -283,7 +283,7 @@ i{
   width: @picture-size;
   border-radius: 50%;
   border: 5px solid @accent-color;
-  content: url("../../resume/person.jpg");
+  content: url("https://cdn.xieyezi.com/person.jpg");
   z-index: 2;
 }
 

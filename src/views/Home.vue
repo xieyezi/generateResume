@@ -29,7 +29,7 @@ export default {
 <style scoped>
 .home {
   position: fixed;
-  background-image: url("../assets//images/banner.jpg");
+  background-image: url("https://cdn.xieyezi.com/banner.jpg");
   background-position: center;
   transform-origin: top;
   background-size: cover;
