@@ -303,7 +303,7 @@ h4 {
     width: 90%;
     position: relative;
     background-color: #ffffff;
-    padding: 20px;
+    padding: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
     display: inline-block;

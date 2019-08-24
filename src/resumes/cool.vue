@@ -153,7 +153,7 @@
                     v-for="(project, index) in person.projects"
                     :key="index"
                     class="section-content__item-grid"
-                    href="project.url"
+                    :href="project.url"
                   >
                     <span class="section-content__header">{{ project.name }}</span>
                     <span
@@ -162,12 +162,9 @@
                     >开发语言</span>
                     <span>{{project.platform}}</span>
                     <span class="section-content__text" style="padding-top:10px;">项目描述</span>
-                    <p>{{project.description}}</p>
-                    <span
-                      class="section-content__text"
-                      style="display:inline-block;padding-right:10px;padding-top:10px;"
-                    >项目地址</span>
-                    <span>{{project.url}}</span>
+                    <span class="section-content__text" style="padding-top:10px;">{{project.description}}</span>
+                    <span class="section-content__text" style="padding-top:10px;">项目地址</span>
+                    <span class="section-content__text" style="padding-top:10px;">{{project.url}}</span>
                   </a>
                 </div>
               </div>

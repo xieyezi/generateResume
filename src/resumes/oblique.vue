@@ -28,7 +28,7 @@
               >
                 <div class="row">
                   <span class="job-title">{{experience.position}}</span>
-                  <i class="material-icons">details</i>
+                  <i class="fa fa-hand-o-right"></i>
                   <span class="company">{{experience.company}}</span>
                 </div>
 

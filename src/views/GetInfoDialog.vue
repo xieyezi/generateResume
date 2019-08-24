@@ -6,6 +6,7 @@
       :before-close="beforeClose"
       :close-on-click-modal="false"
       :show-close="false"
+      width="70%"
     >
       <el-form
         :model="personFrom"

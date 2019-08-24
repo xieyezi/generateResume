@@ -19,8 +19,8 @@ const Person = {
         {
             company: "东信北邮信息科技有限公司",
             position: "web 开发工程师",
-            timeperiod: "2018.8-2018.12",
-            description: "做数据可视化",
+            timeperiod: "2019.6-至今",
+            description: "负责本部门的前台开发和后台开发",
             website: "https://example.com"
         }
     ],
@@ -58,18 +58,27 @@ const Person = {
             level: "80"
         }
     ],
-    knowledge: "同时我还是个网易云音乐人，哈哈",
+    knowledge: "同时我还是个网易云音乐人",
     projects: [
         {
-            name: "best-resume-ever",
+            name: "generateResume",
             platform: "Vue",
-            description: "👔 💼 Build fast 🚀 and easy multiple beautiful resumes and create your best CV ever! Made with Vue and LESS.",
-            url: "https://github.com/salomonelli/best-resume-ever"
+            description: "输入个人信息，自动生成优美简历。",
+            url: "www.xieyezi.com/reume"
+        },
+        {
+            name: "vueMusic APP",
+            platform: "Vue",
+            description: "利用vue做的音乐Web APP，支持热门推荐、歌手选择、歌曲播放、播放模式选择、歌曲歌手的搜索、主题换肤、个人收藏、播放历史等功能。",
+            url: "www.xieyezi.com"
         }
     ],
     hobbies: [
         {
-            name: "Video Games",
+            name: "音乐"
+        },
+        {
+            name: "羽毛球"
         }
     ],
     contributions:[
