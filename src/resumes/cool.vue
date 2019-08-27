@@ -37,9 +37,7 @@
               </div>
 
               <div v-if="person.jobs" class="section">
-                <div class="section-headline">
-                  工作经历
-                </div>
+                <div class="section-headline">工作经历</div>
 
                 <div class="section-content-grid">
                   <a
@@ -81,7 +79,11 @@
                     {{ person.contact.website }}
                   </a>
 
-                  <a v-if="person.contact.github" class="section-link" :href="person.contact.github">
+                  <a
+                    v-if="person.contact.github"
+                    class="section-link"
+                    :href="person.contact.github"
+                  >
                     <i class="fa fa-github"></i>
                     {{ person.contact.github }}
                   </a>
@@ -97,7 +99,7 @@
             <div class="content__right">
               <div class="section">
                 <div class="section-headline">
-                   <i class="fa fa-suitcase fa-lg" style="color:rgb(52,73,94);"></i>
+                  <i class="fa fa-suitcase fa-lg" style="color:rgb(52,73,94);"></i>
                   工作经历
                 </div>
                 <div class="section-content">
@@ -144,7 +146,7 @@
 
               <div v-if="person.projects" class="section">
                 <div class="section-headline">
-                   <i class="fa fa-folder fa-lg" style="color:rgb(52,73,94);"></i>
+                  <i class="fa fa-folder fa-lg" style="color:rgb(52,73,94);"></i>
                   项目经历
                 </div>
 
@@ -162,7 +164,10 @@
                     >开发语言</span>
                     <span>{{project.platform}}</span>
                     <span class="section-content__text" style="padding-top:10px;">项目描述</span>
-                    <span class="section-content__text" style="padding-top:10px;">{{project.description}}</span>
+                    <span
+                      class="section-content__text"
+                      style="padding-top:10px;"
+                    >{{project.description}}</span>
                     <span class="section-content__text" style="padding-top:10px;">项目地址</span>
                     <span class="section-content__text" style="padding-top:10px;">{{project.url}}</span>
                   </a>
@@ -199,15 +204,24 @@
       </div>
     </div>
     <div class="start">
-      <el-button
-        type="primary"
-        class="start"
-        style="font-size:16px;width:140px;font-weight:300;"
-        @click="download"
-      >
-        下载
-        <i class="el-icon-download el-icon--right"></i>
-      </el-button>
+      <div>
+        <el-button
+          type="primary"
+          style="font-size:16px;width:140px;font-weight:300;"
+          @click="download"
+        >
+          下载
+          <i class="el-icon-download el-icon--right"></i>
+        </el-button>
+      </div>
+      <div style="margin-top:20px;">
+        <el-button
+          type="primary"
+          style="font-size:16px;width:140px;font-weight:300;"
+          @click="toIndex"
+        >返回
+        </el-button>
+      </div>
     </div>
   </div>
 </template>
@@ -241,6 +255,9 @@ export default {
     download() {
       //导出PDF
       downloadPDF(document.querySelector("#cool"), this.htmlTitle);
+    },
+    toIndex(){
+      this.$router.back();
     }
   },
   created() {}
@@ -265,8 +282,8 @@ a {
     color: inherit;
   }
 }
-i{
-  color:white;
+i {
+  color: white;
   margin-right: 5px;
 }
 .resume {

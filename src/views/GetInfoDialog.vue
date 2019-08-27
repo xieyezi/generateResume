@@ -55,7 +55,7 @@
           <el-input v-model="personFrom.position" placeholder="你现在想要应聘的职位" style="width:60%;"></el-input>
         </el-form-item>
 
-        <el-form-item label="最高学历" prop="education" v-for="(item,index) in personFrom.education">
+        <el-form-item label="最高学历" prop="education"  v-for="(item,index) in personFrom.education">
           <el-input v-model="personFrom.education[index].degree" placeholder="最高学位" style="width:60%;"></el-input>
           <el-input
             v-model="personFrom.education[index].description"
@@ -77,7 +77,6 @@
         <el-form-item
           label="工作经历"
           prop="experience"
-          :key = "experice.company"
           v-for="(experice,index) in personFrom.experience"
         >
           <el-input
@@ -119,7 +118,7 @@
           >删除</el-button>
         </el-form-item>
 
-        <el-form-item label="项目经历" prop="projects" :key="project.name" v-for="(project,index) in personFrom.projects">
+        <el-form-item label="项目经历" prop="projects"  v-for="(project,index) in personFrom.projects">
           <el-input v-model="personFrom.projects[index].name" placeholder="项目名称" style="width:60%;"></el-input>
           <el-input
             v-model="personFrom.projects[index].platform"
@@ -149,7 +148,7 @@
           >删除</el-button>
         </el-form-item>
 
-        <el-form-item label="专业技能" prop="skills" :key="skill.level" v-for="(skill,index) in personFrom.skills">
+        <el-form-item label="专业技能" prop="skills"  v-for="(skill,index) in personFrom.skills">
           <el-input v-model="personFrom.skills[index].name" placeholder="名称" style="width:60%;"></el-input>
           <el-input
             v-model="personFrom.skills[index].level"
@@ -165,7 +164,7 @@
           >删除</el-button>
         </el-form-item>
 
-        <el-form-item label="兴趣爱好" :key=hobby.name prop="hobbies" v-for="(hobby,index) in personFrom.hobbies">
+        <el-form-item label="兴趣爱好"  prop="hobbies" v-for="(hobby,index) in personFrom.hobbies">
           <el-input v-model="personFrom.hobbies[index].name" placeholder="名称" style="width:60%;"></el-input>
           <el-button type="primary" style="margin-left:20px;" @click="addHobby">添加兴趣爱好</el-button>
           <el-button

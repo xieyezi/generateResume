@@ -71,16 +71,27 @@
         </router-link>
       </div>
     </div>
+     
     <div class="start">
-      <el-button
+     <div>
+          <el-button
         type="primary"
-        class="start"
         style="font-size:18px;width:160px;font-weight:300;"
         @click="openDialog"
       >
         开始动手吧
         <i class="el-icon-right el-icon--right"></i>
       </el-button>
+     </div>
+
+     <div style="margin-top:20px;">
+        <el-button
+        type="primary"
+        style="font-size:18px;width:160px;font-weight:300;"
+        @click="toIndex"
+      ><i class="el-icon-back el-icon--back"></i>返回首页  
+      </el-button>
+     </div>
     </div>
     <GetInfoDialog :dialogOpen="dialogOpen" @closeDialog="closeDialog"></GetInfoDialog>
   </div>
@@ -88,7 +99,8 @@
 <script>
 // @ is an alias to /src
 import GetInfoDialog from "./GetInfoDialog";
-
+import { deletePersonInfo } from  '../utils/cache';
+import { mapActions } from "vuex";
 export default {
   name: "createResume",
   data() {
@@ -110,7 +122,15 @@ export default {
     },
     closeDialog(val) {
       this.dialogOpen = val;
-    }
+    },
+    toIndex(){
+      this.$router.back();
+      //返回首页之前清空用户输入
+      this.deletePerson();
+    },
+    ...mapActions([
+      'deletePerson'
+    ])
   },
   created() {}
 };

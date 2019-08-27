@@ -122,8 +122,25 @@
         </div>
       </div>
     </div>
-     <div class="start">
-      <el-button type="primary" class="start" style="font-size:16px;width:140px;font-weight:300;" @click="download">下载<i class="el-icon-download el-icon--right"></i></el-button>
+    <div class="start">
+      <div>
+        <el-button
+          type="primary"
+          style="font-size:16px;width:140px;font-weight:300;"
+          @click="download"
+        >
+          下载
+          <i class="el-icon-download el-icon--right"></i>
+        </el-button>
+      </div>
+      <div style="margin-top:20px;">
+        <el-button
+          type="primary"
+          style="font-size:16px;width:140px;font-weight:300;"
+          @click="toIndex"
+        >返回
+        </el-button>
+      </div>
     </div>
   </div>
 </template>
@@ -158,6 +175,9 @@ export default {
     download(){
        //导出PDF
         downloadPDF( document.querySelector('#material-dark'), this.htmlTitle);
+    },
+     toIndex(){
+      this.$router.back();
     }
   },
   created() {

@@ -8,6 +8,18 @@
          <el-button type="primary" style="font-size:20px;width:200px;" class="go" @click="go">马上开始</el-button>
       </div>
     </div>
+    <footer>
+      <div>
+        <div>
+          Copyright 2019 - present xieyezi All Rights Reserved
+          <a href="http://www.miitbeian.gov.cn/" class="highlight-name_beian" target="_blank">渝ICP备17013916号-1</a>
+          <span style="margin-left:30px;margin-right:10px;">联系我:</span>
+          <a href="https://github.com/xieyezi" class="highlight-name" target="_blank">Github</a>
+          <a href="https://juejin.im/user/5c1cfe85e51d4511851c478d" class="highlight-name" target="_blank">掘金</a>
+          <a href="https://www.zhihu.com/people/xie-ye-zi-47/activities" class="highlight-name" target="_blank">知乎</a>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -44,12 +56,12 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(7, 17, 27, 0.5);
+  background-color: rgba(7, 17, 27, 0.6);
 }
 .banner {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 92%;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -74,9 +86,40 @@ export default {
 .go {
   margin-top: 20px;
   animation: toUp 0.5s 0.2s ease-out both;
-  /* background: #d22e3e;
-  border-color: #d22e3e; */
 }
+footer {
+    position: relative;
+    width: 100%;
+    height: 8%;
+    padding: 20px 0;
+    background: rgba(7, 17, 27, 0.2);
+    font-size: 12px;
+    color: #fff;
+    margin: 0 auto;
+    font-weight: 400;
+    text-align: center;
+}
+.highlight-name_beian{
+    color: #0e90d2;
+    font-size: 12px;
+    font-weight: 400;
+    transition: all 0.3s;
+    margin-right: 10px;
+}
+.highlight-name {
+    color: #0e90d2;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+    margin-right: 10px;
+}
+.highlight-name:hover{
+  color: #095f8a;
+}
+footer a {
+  text-decoration: none;
+}
+
 @keyframes right2left {
   0% {
     opacity: 0;

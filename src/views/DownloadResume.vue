@@ -71,20 +71,44 @@
         </router-link>
       </div>
     </div>
+    <div class="start">
+     <div>
+          <el-button
+        type="primary"
+        style="font-size:18px;width:160px;font-weight:300;"
+        @click="openDialog"
+      >
+        重新开始
+        <i class="el-icon-right el-icon--right"></i>
+      </el-button>
+     </div>
+
+     <div style="margin-top:20px;">
+        <el-button
+        type="primary"
+        style="font-size:18px;width:160px;font-weight:300;"
+        @click="back"
+      ><i class="el-icon-back el-icon--back"></i>返回首页
+      </el-button>
+     </div>
+    </div>
+    <GetInfoDialog :dialogOpen="dialogOpen" @closeDialog="closeDialog"></GetInfoDialog>
   </div>
 </template>
 <script>
 // @ is an alias to /src
-import { mapGetters } from "vuex";
+import { mapGetters,mapActions } from "vuex";
+import { deletePersonInfo } from  '../utils/cache'
+import GetInfoDialog from "./GetInfoDialog";
 export default {
   name: "CatResume",
   data() {
     return {
-      
+      dialogOpen: false
     };
   },
   components: { 
-   
+    GetInfoDialog 
   },
   computed: {
     ...mapGetters([
@@ -93,11 +117,21 @@ export default {
   },
   methods: {
     back() {
-      this.$router.back();
+      this.$router.push({
+            name: "home"
+      });
+      //返回首页之前清空用户输入
+      this.deletePerson();
     },
-    download(){
-        
-    }
+    openDialog() {
+      this.dialogOpen = true;
+    },
+    closeDialog(val) {
+      this.dialogOpen = val;
+    },
+    ...mapActions([
+      'deletePerson'
+    ])
   },
   created() {}
 };
