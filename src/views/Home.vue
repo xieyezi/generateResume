@@ -12,7 +12,7 @@
       <div>
         <div>
           Copyright 2019 - present xieyezi All Rights Reserved
-          <a href="http://www.miitbeian.gov.cn/" class="highlight-name_beian" target="_blank">渝ICP备17013916号-1</a>
+          <a href="http://www.beian.miit.gov.cn/" class="highlight-name_beian" target="_blank">渝ICP备17013916号</a>
           <span style="margin-left:30px;margin-right:10px;">联系我:</span>
           <a href="https://github.com/xieyezi" class="highlight-name" target="_blank">Github</a>
           <a href="https://juejin.im/user/5c1cfe85e51d4511851c478d" class="highlight-name" target="_blank">掘金</a>
